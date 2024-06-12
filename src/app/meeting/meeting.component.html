@@ -1,0 +1,27 @@
+<!-- <p>meeting works!</p> -->
+
+<div class="container">
+    <h1>MEET WITH US!</h1>
+    <form #meetingForm="ngForm">
+       
+        <img src="../assets/meeting3.jpg" class="figure-img" alt="Placeholder image">
+        <div class="mb-3">
+            <label for="number" class="form-label">Number of People</label>
+            <input type="number" class="form-control" id="number">
+        </div>
+        <div class="mb-3">
+            <label for="topic" class="form-label">Meeting Topic</label>
+            <input type="text" class="form-control" id="topic">
+        </div>
+        <div class="mb-3 form-check">
+            <label for="datetime" class="form-label" >Start Time</label>
+            <input type="datetime-local" class="form-control" id="datetime"
+             [(ngModel)]="model.startTime" #datetime="ngModel" name="datetime" required="">
+
+             <div class="alert alert-danger" role="alert" [hidden]="datetime.valid || datetime.pristine">
+                Start Time is required
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
